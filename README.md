@@ -1,3 +1,8 @@
+it is a optimize version of https://github.com/banafshe76/WSD_EL.
+
+update farsnet to version 2.5 and farsnet db to version 3.
+
+add py4j connection  
 # WSD_EL
 This project has two main components. The first component is a restfull API, which gets a persian sentence as input and disambiguates words of this sentence.
 The porpuse of the second component is achieving a mapping between Farsnet and Farsbase, which are persian wornet and knowledgebase respectively.

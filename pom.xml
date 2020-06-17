@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework</groupId>
@@ -21,30 +21,21 @@
     </parent>
 
     <dependencies>
-        <!--       <dependency>-->
-        <!--            <groupId>com.roufid.tutorials4</groupId>-->
-        <!--            <artifactId>apachecommons</artifactId>-->
-        <!--            <version>1.0</version>-->
-        <!--            <systemPath>${basedir}/lib/org.apache.commons.io.jar</systemPath>-->
-        <!--            <scope>system</scope>-->
-        <!--        </dependency>-->
         <dependency>
-            <groupId>farsnet</groupId>
-            <artifactId>farsnet</artifactId>
-            <version>2.0</version>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.31.1</version>
         </dependency>
         <dependency>
             <groupId>jhazm</groupId>
             <artifactId>jhazm</artifactId>
             <version>0.2</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>com.roufid.tutorials3</groupId>-->
-        <!--            <artifactId>mitjwi</artifactId>-->
-        <!--            <version>2.1.5</version>-->
-        <!--            <scope>system</scope>-->
-        <!--             <systemPath>${basedir}/lib/edu.mit.jwi_2.1.5.jar</systemPath>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>net.sf.py4j</groupId>
+            <artifactId>py4j</artifactId>
+            <version>0.10.9</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -57,6 +48,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>2.3.0.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -88,13 +84,11 @@
             <artifactId>stanford-corenlp</artifactId>
             <version>3.5.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/edu.mit/jwi -->
         <dependency>
             <groupId>edu.mit</groupId>
             <artifactId>jwi</artifactId>
             <version>2.2.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.json/org.json -->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>org.json</artifactId>
@@ -106,72 +100,25 @@
         <java.version>1.8</java.version>
     </properties>
 
-
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-
             </plugin>
-           <!-- <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>dockerfile-maven-plugin</artifactId>
-                <version>1.4.3</version>
-                <executions>
-                    <execution>
-                        <id>default</id>
-                        <goals>
-                            <goal>build</goal>
-                        </goals>
-                    </execution>
-                </executions>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
-                    <repository>docker.io/kkapelon/docker-maven-comparison</repository>
-                    <tag>${project.version}</tag><archive>
-                    <manifest>
-                        <addClasspath>true</addClasspath>
-                        <classpathPrefix>lib/</classpathPrefix>
-                        <mainClass>WSD.Application</mainClass>
-                    </manifest>
-                </archive>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>WSD.Application</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
-            </plugin>-->
-          <!-- <plugin>
-                 <groupId>org.apache.maven.plugins</groupId>
-                 <artifactId>maven-install-plugin</artifactId>
-                 <version>2.5.2</version>
-                 <executions>
-                     <execution>
-                         <phase>initialize</phase>
-                         <goals>
-                             <goal>install-file</goal>
-                         </goals>
-                         <configuration>
-                             <file>${basedir}/lib/org.apache.commons.io.jar</file>
-                             <groupId>com.roufid.tutorials4</groupId>
-                             <artifactId>apachecommons</artifactId>
-                             <version>1.0</version>
-                             <packaging>jar</packaging>
-                         </configuration>
-                     </execution>
-                 </executions>
-             </plugin>-->
-             <plugin>
-                 <groupId>org.apache.maven.plugins</groupId>
-                 <artifactId>maven-jar-plugin</artifactId>
-                 <configuration>
-                     <archive>
-                         <manifest>
-                             <addClasspath>true</addClasspath>
-                             <classpathPrefix>lib/</classpathPrefix>
-                             <mainClass>WSD.Application</mainClass>
-                         </manifest>
-                     </archive>
-                 </configuration>
-
-             </plugin>
-         </plugins>
-     </build>
-
- </project>
+            </plugin>
+        </plugins>
+    </build>
+</project>

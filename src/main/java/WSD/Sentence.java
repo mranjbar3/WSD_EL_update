@@ -6,14 +6,14 @@ public class Sentence {
 
     private String content;
     private Vector<String> meaning;
-    private int i=0;
+
+    public Sentence() {
+    }
 
     public String getContent() {
-        //content =  content+' ';
         System.out.println(content);
         if (content!=null)
-            content = new WordSenceDisambiguatorMain().main1(content);
-        //content = content.replace(" ","<br>")+"--";
+            content = new WordSenseDisambiguatedMain().main1(content);
         return content;
     }
 
@@ -28,4 +28,7 @@ public class Sentence {
         this.content = content;
     }
 
+    public void setMeaning(Vector<String> meaning) {
+        this.meaning = meaning;
+    }
 }

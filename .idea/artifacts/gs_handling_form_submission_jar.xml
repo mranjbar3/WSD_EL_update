@@ -2,7 +2,7 @@
   <artifact type="jar" name="gs-handling-form-submission:jar">
     <output-path>$PROJECT_DIR$/classes/artifacts/gs_handling_form_submission_jar</output-path>
     <root id="archive" name="gs-handling-form-submission.jar">
-      <element id="module-output" name="gs-handling-form-submission" />
+      <element id="module-output" name="WSD_EL" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter/2.0.5.RELEASE/spring-boot-starter-2.0.5.RELEASE.jar" path-in-jar="/" />
       <element id="library" level="project" name="Maven: commons-cli:commons-cli:${cli.version}" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/thymeleaf/thymeleaf/3.0.9.RELEASE/thymeleaf-3.0.9.RELEASE.jar" path-in-jar="/" />
